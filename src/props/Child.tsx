@@ -13,3 +13,7 @@ const Child = ({ color }: ChildProps) => {
 };
 
 export default Child;
+
+export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {
+  return <div>{color}</div>;
+};
