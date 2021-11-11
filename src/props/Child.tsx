@@ -1,9 +1,13 @@
 import React from "react";
+// in the child component, define a interface for props
+interface ChildProps {
+  color: string;
+}
 
-const Child = () => {
+const Child = ({ color }: ChildProps) => {
   return (
     <div>
-      <h1>Child</h1>
+      <h1>{color}</h1>
     </div>
   );
 };
