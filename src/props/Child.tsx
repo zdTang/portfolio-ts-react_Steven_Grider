@@ -3,14 +3,16 @@ import React from "react";
 interface ChildProps {
   color: string;
   clickHandler: () => void;
+  children?: any;
 }
 
 // Approach one: Has some downsides, add property to component is not allowed
-const Child = ({ color, clickHandler }: ChildProps) => {
+const Child = ({ color, clickHandler, children }: ChildProps) => {
   return (
     <div>
       <h1>{color}</h1>
-      <button onClick={clickHandler}></button>
+      {children}
+      <button onClick={clickHandler}>click</button>
     </div>
   );
 };
