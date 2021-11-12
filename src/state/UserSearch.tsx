@@ -10,15 +10,15 @@ const users = [
 
 const UserSearch: React.FC = () => {
   const [searchItem, setSearchItem] = useState("");
+  const [user, setUser] = useState<{ name: string; age: number } | undefined>();
 
-  const list =
-    searchItem.trim().length === 0
-      ? []
-      : users.filter((item) => item.name.includes(searchItem));
-  console.log(searchItem);
-  console.log(list);
+  const search = () => {
+    const foundUser = users.find((user) => {
+      return user.name === searchItem;
+    });
+    setUser(foundUser);
+  };
 
-  const listItem = list.map((item, index) => <li key={index}>{item.name}</li>);
   return (
     <div>
       User Search
@@ -27,8 +27,9 @@ const UserSearch: React.FC = () => {
         value={searchItem}
         onChange={(e) => setSearchItem(e.target.value)}
       />
+      <button onClick={search}>Search</button>
       <h4>List is here</h4>
-      {listItem}
+      {user && user.name}
     </div>
   );
 };
