@@ -15,9 +15,12 @@ const GuestList: React.FC = () => {
     setGuest(e.target.value);
   };
 
+  const guests = guestList.map((item, index) => <p key={index}>{item}</p>);
+
   return (
     <div>
       <h3>Guest List</h3>
+      {guests}
       <input type="text" value={guest} onChange={inputHandler} />
       <button onClick={addGuestHandler}>Add Guest</button>
     </div>
