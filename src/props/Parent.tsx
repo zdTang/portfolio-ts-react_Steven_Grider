@@ -1,11 +1,11 @@
 import React from "react";
-import Child from "./Child";
+import { ChildAsFC } from "./Child";
 
 const Parent = () => {
   return (
-    <Child color="green" clickHandler={() => console.log("hello")}>
-      content of props.children
-    </Child>
+    <ChildAsFC color="red" onClick={() => console.log("Clicked")}>
+      hi, this is children of ChildAsFC
+    </ChildAsFC>
   );
 };
 
