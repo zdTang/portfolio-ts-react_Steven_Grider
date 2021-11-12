@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import React from "react";
 import Parent from "./props/Parent";
-import GuestList from "./state/GuestList";
+import GuestList from "./refs/GuestList";
 import UserSearch from "./classes/UserSearch";
 import EventComponent from "./events/EventComponent";
 
@@ -15,7 +15,7 @@ const dataCollection = [
 export const App = () => {
   return (
     <div>
-      <UserSearch users={dataCollection} />
+      <GuestList />
     </div>
   );
 };
